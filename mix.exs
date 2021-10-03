@@ -14,6 +14,16 @@ defmodule SuperPotato.MixProject do
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test
+      ],
+      # Docs
+      name: "SuperPotato",
+      source_url: "https://github.com/benitezhm/super-potato",
+      homepage_url: "https://github.com/benitezhm/super-potato",
+      docs: [
+        # The main page in the docs
+        main: "SuperPotato",
+        logo: "logo.jpg",
+        extras: ["README.md"]
       ]
     ]
   end
@@ -29,7 +39,8 @@ defmodule SuperPotato.MixProject do
   defp deps do
     [
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.14", only: :test}
+      {:excoveralls, "~> 0.14", only: :test},
+      {:ex_doc, "~> 0.25", only: :dev, runtime: false}
     ]
   end
 end

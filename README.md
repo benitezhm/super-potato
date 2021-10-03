@@ -1,21 +1,24 @@
 # SuperPotato
 
-**TODO: Add description**
+This is a library for NASA to get to know how much fuel is required for a specified trip to space.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `super_potato` to your list of dependencies in `mix.exs`:
+This package is not yet available in Hex, however, the package can be installed
+by adding `super_potato` to your list of dependencies in `mix.exs` like this:
 
 ```elixir
 def deps do
   [
-    {:super_potato, "~> 0.1.0"}
+    {:super_potato, git: "https://github.com/benitezhm/super-potato.git", branch: "master"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/super_potato](https://hexdocs.pm/super_potato).
+Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc) with the command `mix docs` and then can be accessed in file:///[path_to_your_local_copy]/super_potato/doc/SuperPotato.html.
 
+## Test
+
+You can run the tests with `mix test` also you can generate the coverage report with `mix excoveralls.html` and check the report in file:///[path_to_your_local_copy]/super_potato/cover/excoveralls.html
+
+The coverall artifact report is also available for 5 days in [github actions](https://github.com/benitezhm/super-potato/actions).
