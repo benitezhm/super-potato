@@ -20,12 +20,14 @@ defmodule SuperPotato do
   @spec calculate_required_fuel(initial_weight :: integer(), path :: list(planet())) :: integer()
   def calculate_required_fuel(initial_weight, path) do
     path
-    |> Enum.reduce(0, fn target, fuel ->
-        initial_fuel = calculate_fuel(initial_weight, target)
+    |> List.foldr(0, fn target, fuel ->
+      initial_fuel =
+        (fuel + initial_weight)
+        |> calculate_fuel(target)
 
-        additional_fuel = calculate_additional_fuel(0, initial_fuel, target)
+      additional_fuel = calculate_additional_fuel(0, initial_fuel, target)
 
-        fuel + initial_fuel + additional_fuel
+      fuel + initial_fuel + additional_fuel
     end)
   end
 
