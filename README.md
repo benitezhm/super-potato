@@ -1,6 +1,9 @@
 # SuperPotato
 
-This is a library for NASA to get to know how much fuel is required for a specified trip to space.
+![Tests Passed](https://github.com/benitezhm/super-potato/actions/workflows/elixir.yml/badge.svg)
+
+
+> This is a library for NASA to get to know how much fuel is required for a specified trip to space.
 
 ## Installation
 
