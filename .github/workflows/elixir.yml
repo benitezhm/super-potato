@@ -36,3 +36,5 @@ jobs:
       with:
         name: code-coverage-report.html
         path: cover/excoveralls.html
+        retention-days: 5
+      target: code-coverage-report.html
