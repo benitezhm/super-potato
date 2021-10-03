@@ -20,27 +20,34 @@ defmodule SuperPotato do
   @spec calculate_required_fuel(initial_weight :: integer(), path :: list(planet())) :: integer()
   def calculate_required_fuel(initial_weight, path) do
     path
-    |> Enum.reduce(0, fn {_, gravity}, fuel ->
-      initial_fuel =
-        (initial_weight * gravity * 0.033 - 42)
-        |> Kernel.trunc()
+    |> Enum.reduce(0, fn target, fuel ->
+        initial_fuel = calculate_fuel(initial_weight, target)
 
-      additional_fuel = calculate_additional_fuel(0, initial_fuel, gravity)
+        additional_fuel = calculate_additional_fuel(0, initial_fuel, target)
 
-      fuel + initial_fuel + additional_fuel
+        fuel + initial_fuel + additional_fuel
     end)
   end
 
   # caculate the additional fuel required based on the additional weight added by the fuel
-  defp calculate_additional_fuel(additional_fuel, weight, gravity) do
-    (weight * gravity * 0.033 - 42)
+  defp calculate_additional_fuel(additional_fuel, weight, target) do
+    calculate_fuel(weight, target)
     |> Kernel.trunc()
     |> case do
       fuel when fuel > 0 ->
-        calculate_additional_fuel(additional_fuel + fuel, fuel, gravity)
+        (additional_fuel + fuel)
+        |> calculate_additional_fuel(fuel, target)
 
       _fuel ->
         additional_fuel
     end
+  end
+
+  defp calculate_fuel(weight, {:launch, gravity}) do
+    Kernel.trunc(weight * gravity * 0.042 - 33)
+  end
+
+  defp calculate_fuel(weight, {:land, gravity}) do
+    Kernel.trunc(weight * gravity * 0.033 - 42)
   end
 end
