@@ -34,7 +34,6 @@ jobs:
     - name: Archive coveralls report
       uses: actions/upload-artifact@v2
       with:
-        name: code-coverage-report.html
+        name: code-coverage-report
         path: cover/excoveralls.html
         retention-days: 5
-      target: code-coverage-report.html
