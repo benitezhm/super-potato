@@ -18,6 +18,19 @@ def deps do
 end
 ```
 
+Also you can run it by yourself with:
+
+```bash
+mix do deps.get, deps.compile && iex -S mix
+```
+
+and once in IEx console you can do:
+
+```elixir
+> SuperPotato.calculate_required_fuel(28_801, [{:launch, 9.807}, {:land, 1.62}, {:launch, 1.62}, {:land, 9.807}])
+> 51898
+```
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc) with the command `mix docs` and then can be accessed in file:///[path_to_your_local_copy]/super_potato/doc/SuperPotato.html.
 
 ## Test
