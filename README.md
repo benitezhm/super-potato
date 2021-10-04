@@ -2,6 +2,7 @@
 
 ![Tests Passed](https://github.com/benitezhm/super-potato/actions/workflows/elixir.yml/badge.svg)
 
+<img src="https://github.com/benitezhm/super-potato/blob/master/logo.jpg?raw=true" width="120" height="100">
 
 > This is a library for NASA to get to know how much fuel is required for a specified trip to space.
 
