@@ -2,8 +2,8 @@
 <!-- next-header -->
 
 ## [Unreleased] - ReleaseDate
-### Changed
-* **BREAKING**: `SuperPotato.calculate_required_fuel/2` now accepts a list of maps as the second argument (flight path) instead of a list of tuples. Each map must contain `:action` (either `:launch` or `:land`) and `:gravity` (gravitational acceleration in m/s²).  This change improves code readability and maintainability.
+### Breaking
+* `SuperPotato.calculate_required_fuel/2` now accepts a list of maps as the second argument (flight path) instead of a list of tuples. Each map must contain `:action` (either `:launch` or `:land`) and `:gravity` (gravitational acceleration in m/s²).  This change improves code readability and maintainability.
 
   **Before:**
   ```elixir
