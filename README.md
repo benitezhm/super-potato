@@ -6,8 +6,6 @@
 
 > A fuel calculation library for space missions. Calculate the exact amount of fuel required for any flight path based on mass, gravity, and mission phases.
 
-📚 **[View Documentation](doc/index.html)** | Generated with `mix docs`
-
 ## Features
 
 - 🚀 Calculate fuel requirements for launch and landing maneuvers
