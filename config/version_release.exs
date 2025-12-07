@@ -1,7 +1,5 @@
 import Config
 
-import Config
-
 replacements = [
   %{
     file: "CHANGELOG.md",
