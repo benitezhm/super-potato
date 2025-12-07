@@ -2,6 +2,10 @@
 <!-- next-header -->
 
 ## [Unreleased] - ReleaseDate
+### Fixed
+* Handle zero or negative fuel calculation
+
+## [0.1.1-rc.1] - 2025-12-7
 ### Breaking
 * `SuperPotato.calculate_required_fuel/2` now accepts a list of maps as the second argument (flight path) instead of a list of tuples. Each map must contain `:action` (either `:launch` or `:land`) and `:gravity` (gravitational acceleration in m/s²).  This change improves code readability and maintainability.
 
@@ -37,4 +41,5 @@
   * erlex 0.2.8
     
 <!-- next-url -->
-[Unreleased]: https://github.com/benitezhm/super-potato/compare/master...HEAD
+[Unreleased]: https://github.com/benitezhm/super-potato/compare/v0.1.1-rc.1...HEAD
+[Unreleased]: https://github.com/benitezhm/super-potato/compare/v0.1.1-rc.0...v0.1.1-rc.1
