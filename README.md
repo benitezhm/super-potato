@@ -73,8 +73,8 @@ SuperPotato.calculate_required_fuel(14_606, [
 SuperPotato.calculate_required_fuel(10_000, [
   %{action: :launch, gravity: 9.807},   # Launch from Earth
   %{action: :land, gravity: 15.5},      # Land on high-gravity planet
-  %{action: :launch, gravity: 15. 5},    # Launch from high-gravity planet
-  %{action: :land, gravity: 9. 807}      # Return to Earth
+  %{action: :launch, gravity: 15.5},    # Launch from high-gravity planet
+  %{action: :land, gravity: 9.807}      # Return to Earth
 ])
 ```
 
@@ -148,7 +148,7 @@ SuperPotato.calculate_required_fuel(28_801, [
 SuperPotato.calculate_required_fuel(75_432, [
   %{action: :launch, gravity: 9.807},  # Earth
   %{action: :land, gravity: 1.62},     # Moon
-  %{action: :launch, gravity: 1. 62},   # Moon
+  %{action: :launch, gravity: 1.62},   # Moon
   %{action: :land, gravity: 3.721},    # Mars
   %{action: :launch, gravity: 3.721},  # Mars
   %{action: :land, gravity: 9.807}     # Earth
