@@ -5,7 +5,7 @@ defmodule SuperPotato.MixProject do
     [
       app: :super_potato,
       version: "0.1.0",
-      elixir: "~> 1.12",
+      elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
@@ -38,9 +38,11 @@ defmodule SuperPotato.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.14", only: :test},
-      {:ex_doc, "~> 0.25", only: :dev, runtime: false}
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
+      {:excoveralls, "~> 0.18", only: :test},
+      {:ex_doc, "~> 0.39", only: :dev, runtime: false},
+      {:version_release, "~> 0.5.3", only: [:test, :dev], runtime: false},
+      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
 end

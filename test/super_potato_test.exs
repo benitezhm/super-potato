@@ -4,7 +4,8 @@ defmodule SuperPotatoTest do
 
   describe "Test SuperPotato module" do
     test "fuel required for Apollo 11 to land on earth" do
-      required_fuel = SuperPotato.calculate_required_fuel(28_801, [{:land, 9.807}])
+      required_fuel =
+        SuperPotato.calculate_required_fuel(28_801, [%{action: :land, gravity: 9.807}])
 
       # to land on earth
       assert required_fuel == 13_447
@@ -13,38 +14,38 @@ defmodule SuperPotatoTest do
     test "fuel required for Apollo 11 to do a round trip to the moon" do
       required_fuel =
         SuperPotato.calculate_required_fuel(28_801, [
-          {:launch, 9.807},
-          {:land, 1.62},
-          {:launch, 1.62},
-          {:land, 9.807}
+          %{action: :launch, gravity: 9.807},
+          %{action: :land, gravity: 1.62},
+          %{action: :launch, gravity: 1.62},
+          %{action: :land, gravity: 9.807}
         ])
 
       # round trip to the moon
       assert required_fuel == 51_898
     end
 
-    test "fuel required for Mission on Mars" do
+    test "fuel required for mission on mars" do
       required_fuel =
         SuperPotato.calculate_required_fuel(14606, [
-          {:launch, 9.807},
-          {:land, 3.711},
-          {:launch, 3.711},
-          {:land, 9.807}
+          %{action: :launch, gravity: 9.807},
+          %{action: :land, gravity: 3.711},
+          %{action: :launch, gravity: 3.711},
+          %{action: :land, gravity: 9.807}
         ])
 
       # round trip to the moon
       assert required_fuel == 33_388
     end
 
-    test "fuel required for Passangers ship" do
+    test "fuel required for passengers ship" do
       required_fuel =
         SuperPotato.calculate_required_fuel(75432, [
-          {:launch, 9.807},
-          {:land, 1.62},
-          {:launch, 1.62},
-          {:land, 3.711},
-          {:launch, 3.711},
-          {:land, 9.807}
+          %{action: :launch, gravity: 9.807},
+          %{action: :land, gravity: 1.62},
+          %{action: :launch, gravity: 1.62},
+          %{action: :land, gravity: 3.711},
+          %{action: :launch, gravity: 3.711},
+          %{action: :land, gravity: 9.807}
         ])
 
       # round trip to the moon
