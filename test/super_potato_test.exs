@@ -51,5 +51,15 @@ defmodule SuperPotatoTest do
       # round trip to the moon
       assert required_fuel == 212_161
     end
+
+    test "fuel required for small ship" do
+      required_fuel =
+        SuperPotato.calculate_required_fuel(10, [
+          %{action: :launch, gravity: 1.62}
+        ])
+
+      # round trip to the moon
+      assert required_fuel == 0
+    end
   end
 end

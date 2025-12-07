@@ -57,6 +57,10 @@ defmodule SuperPotato do
       initial_fuel =
         (fuel + initial_weight)
         |> calculate_fuel(maneuver)
+        |> then(fn
+          fuel when fuel > 0 -> fuel
+          _ -> 0
+        end)
 
       additional_fuel = calculate_additional_fuel(0, initial_fuel, maneuver)
 
