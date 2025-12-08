@@ -122,6 +122,14 @@ View the coverage report at `cover/excoveralls.html`
 
 Coverage reports are also available as artifacts in [GitHub Actions](https://github.com/benitezhm/super-potato/actions) (retained for 5 days).
 
+```
+----------------
+COV    FILE                                        LINES RELEVANT   MISSED
+100.0% lib/super_potato.ex                            92       11        0
+[TOTAL] 100.0%
+----------------
+```
+
 ### Generating Documentation
 
 ```bash
